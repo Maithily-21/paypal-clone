@@ -1,2 +1,4 @@
-package com.paypal.user_service.controller;public class AuthController {
+package com.paypal.user_service.controller;
+
+public class AuthController {
 }
