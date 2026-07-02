@@ -53,4 +53,13 @@ public class JWTUtil {
                 .signWith(getSignKey(), SignatureAlgorithm.HS256)
                 .compact(); // build
     }
+
+    public String extractRole(String token){
+        return (String) Jwts.parser()
+                .setSigningKey(getSignKey())
+                .build()
+                .parseClaimsJws(token)
+                .getBody()
+                .get("role");
+    }
 }
