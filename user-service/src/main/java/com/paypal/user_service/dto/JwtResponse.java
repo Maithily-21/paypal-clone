@@ -1,9 +1,9 @@
 package com.paypal.user_service.dto;
 
-public class JwtRequest {
+public class JwtResponse {
     private String token ;
 
-    public JwtRequest(String token) {
+    public JwtResponse(String token) {
         this.token = token;
     }
 

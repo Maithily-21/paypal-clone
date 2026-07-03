@@ -12,6 +12,7 @@ public class User {
     @Column(unique = true)
     private String email;
     private String password;
+    private String role;
 
     public Long getId() {
         return id;
@@ -45,5 +46,11 @@ public class User {
         this.password = password;
     }
 
+    public String getRole() {
+        return role;
+    }
 
+    public void setRole(String role) {
+        this.role = role;
+    }
 }

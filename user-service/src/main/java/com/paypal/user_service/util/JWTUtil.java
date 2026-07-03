@@ -11,7 +11,7 @@ import java.util.Map;
 @Component
 public class JWTUtil {
     //secret key must be of 32 bytes
-    private static final String SECRET = "secret123secret123secret123";
+    private static final String SECRET = "secret123secret123secret123secret123secret123secret123";
 
     private Key getSignKey(){
         return Keys.hmacShaKeyFor(SECRET.getBytes());
