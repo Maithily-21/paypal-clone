@@ -12,9 +12,9 @@ public class Transaction {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name="sender_name",nullable = false)
-    private String senderName;
+    private String senderId;
     @Column(name="receiver_name",nullable = false)
-    private String receiverName;
+    private String receiverId;
     @Column(nullable = false)
     @Positive(message = "Amount must be positive")
     private Double amount;
@@ -27,13 +27,29 @@ public class Transaction {
         //Default
     }
 
-    public Transaction(Long id, String senderName, String receiverName, Double amount, LocalDateTime timestamp, String status) {
+    public Transaction(Long id, String senderId, String receiverId, Double amount, LocalDateTime timestamp, String status) {
         this.id = id;
-        this.senderName = senderName;
-        this.receiverName = receiverName;
+        this.senderId = senderId;
+        this.receiverId = receiverId;
         this.amount = amount;
         this.timestamp = timestamp;
         this.status = status;
+    }
+
+    public String getSenderId() {
+        return senderId;
+    }
+
+    public void setSenderId(String senderId) {
+        this.senderId = senderId;
+    }
+
+    public String getReceiverId() {
+        return receiverId;
+    }
+
+    public void setReceiverId(String receiverId) {
+        this.receiverId = receiverId;
     }
 
     public Long getId() {
@@ -44,21 +60,7 @@ public class Transaction {
         this.id = id;
     }
 
-    public String getSenderName() {
-        return senderName;
-    }
 
-    public void setSenderName(String senderName) {
-        this.senderName = senderName;
-    }
-
-    public String getReceiverName() {
-        return receiverName;
-    }
-
-    public void setReceiverName(String receiverName) {
-        this.receiverName = receiverName;
-    }
 
     public Double getAmount() {
         return amount;
@@ -100,8 +102,8 @@ public class Transaction {
     public String toString() {
         return "Transaction{" +
                 "id=" + id +
-                ", senderName='" + senderName + '\'' +
-                ", receiverName='" + receiverName + '\'' +
+                ", senderId='" + senderId + '\'' +
+                ", receiverId='" + receiverId + '\'' +
                 ", amount=" + amount +
                 ", timestamp=" + timestamp +
                 ", status='" + status + '\'' +
